@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Reservation</title>
+    <link rel="stylesheet" href="./dist/reservation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url(./img/tandoor.jpg) no-repeat ;
+            background-size: cover;
+        }
+
+        form {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 1.5rem;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+
+        input[type="date"],
+        input[type="time"] {
+            width: 100%;
+            display: inline-block;
+            margin-right: 8px;
+        }
+
+        #contactDisplay {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+    .heading{
+      /* background-color:  rgb(73, 73, 126);; */
+      color: white;
+      padding: 20px;
+      grid-column: 1/-1;
+      text-align: center;
+    }
+    .heading>h1{
+      font-weight: 400;
+      font-size: 30px;
+      letter-spacing: 10px;
+      margin-bottom: 10px;
+    }
+    .heading>h3{
+      font-weight: 60px;
+      font-size: 30px;
+      letter-spacing: 5px;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      margin: 0;
+      font-family: Arial;
+    }
+    
+    
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 4px;
+    }
+    
+    /* Create four equal columns that sits next to each other */
+    .column {
+      flex: 25%;
+      max-width: 25%;
+      padding: 0 4px;
+    }
+    
+    .column img {
+      margin-top: 8px;
+      vertical-align: middle;
+    }
+    
+    /* Responsive layout - makes a two column-layout instead of four columns */
+    @media (max-width: 800px) {
+      .column {
+        flex: 50%;
+        max-width: 50%;
+      }
+    }
+    
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media (max-width: 600px) {
+      .column {
+        flex: 100%;
+        max-width: 100%;
+      }
+    }
+    </style>
+    <script>
+      // Script for Nav Scroll effect
+      $(function () {
+          $(document).scroll(function () {
+            var $nav = $("nav");
+            $nav.toggleClass('nav-bg', $(this).scrollTop() > $nav.height());
+          });
+        });
+    </script>
+</head>
+<body>
+  <header>
+    <nav class="sticky z-50 top-0 border-b bg-transparent transition-all duration-500 overflow-hidden">
+      <div class="px-12 max-w-7xl h-16 mx-auto text-white flex items-center justify-between">
+        <div>
+          <img src="./img/logo-rec.png" class="h-40" alt="">
+        </div>
+        <div class="flex lg:gap-8 gap-6 uppercase tracking-wider cursor-pointer text-lg items-center" id="navItems">
+          <span class="group">
+            <a href="./index.html">Home</a>
+            <div class="w-0 group-hover:w-full h-0.5 bg-white ease-in-out duration-500"></div>
+          </span>
+          <span class="group">
+            <a href="./Menu.html">Menu</a>
+            <div class="w-0 group-hover:w-full h-0.5 bg-white ease-in-out duration-500"></div>
+          </span>
+          <span class="group">
+            <a href="./reservationpage.html">Reservation</a>
+            <div class="w-0 group-hover:w-full h-0.5 bg-white ease-in-out duration-500"></div>
+          </span>
+          <span class="group">
+            <a href="./gallerypage.html">Gallery</a>
+            <div class="w-0 group-hover:w-full h-0.5 bg-white ease-in-out duration-500"></div>
+          </span>
+          <span class="group">
+            <a href="./index.html#about">About</a>
+            <div class="w-0 group-hover:w-full h-0.5 bg-white ease-in-out duration-500"></div>
+          </span>
+          <span class="group">
+            <a href="./index.html#contact">Contact</a>
+            <div class="w-0 group-hover:w-full h-0.5 bg-white ease-in-out duration-500"></div>
+          </span>
+        </div>
+        <div id="hamburger" class="fa fa-bars flex items-center text-xl text-teal-500" style="display:none;"></div>
+        <div id="mobileNav"
+          class="fixed flex flex-col gap-8 pt-16 px-4 text-xl uppercase bg-teal-500 h-full inset-0 top-16 w-[70%] left-[-70%] ease-in-out duration-500 cursor-pointer">
+          <span><a href="./index.html">Home</a></span>
+          <span><a href="./Menu.html">Menu</a></span>
+          <span><a href="./reservationpage.html">Reservation</a></span>
+          <span><a href="./gallerypage.html">Gallery</a></span>
+          <span><a href="./index.html#about">About</a></span>
+          <span><a href="./index.html#contact">Contact</a></span>
+        </div>
+      </div>
+  </nav>
+    </header>
+<main>
+  <div class="Gallery">
+    <div class="heading bg-black">
+      <h1>Tandoori Temptation</h1>
+      <h3>&mdash; RESERVATION &mdash;</h3>
+    </div>
+  </div>
+  
+  <form id="reservationForm" enctype="multipart/form-data">
+    <div class="mx-auto max-w-xl">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="contact">Contact Number:</label>
+      <input type="number" id="contact" name="contact" required>
+      
+      <label for="seats">Number of Seats:</label>
+      <input type="number" id="seats" name="seats" min="1" required>
+      
+      <div style="display: flex; justify-content: space-between;">
+        <div>
+          <label for="date">Date:</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+        <div>
+          <label for="time">Time:</label>
+          <input type="time" id="time" name="time" required>
+        </div>
+      </div>
+      
+      <label for="inquiry">Inquiry Message:</label>
+      <textarea id="inquiry" name="inquiry" rows="4"></textarea>
+      
+      <label for="documents">Upload Documents:</label>
+      <input type="file" id="documents" name="documents">
+      
+      <input type="submit" value="Make Reservation">
+    </form>
+  </div>
+          
+          <div id="contactDisplay"></div>
+          <footer class="bg-gray-800 text-white py-8">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+              <!-- Logo -->
+              <div class="mb-4 md:mb-0">
+                <img src="./img/Logo.png" alt="Tandoori Temptations" class="h-20">
+              </div>
+              <!-- Navigation Links -->
+              <div class="flex flex-wrap justify-center text-center md:justify-end space-x-6">
+                <a href="./index.html">Home</a>
+                <a href="./Menu.html">Menu</a>
+                <a href="./reservationpage.html">Reservation</a>
+                <a href="./gallerypage.html">Gallery</a>
+                <a href="./index.html#about">About</a>
+                <a href="./index.html#contact">Contact</a>
+              </div>
+            </div>
+            <div class="text-center mt-8">
+              <p>&copy; 2023 Tandoori Temptations. All rights reserved.</p>
+            </div>
+          </footer>
+          
+          </main>
+          <script>
+            document.getElementById("reservationForm").addEventListener("submit", function(event) {
+              event.preventDefault();
+              
+              const name = document.getElementById("name").value;
+              const email = document.getElementById("email").value;
+              const contact = document.getElementById("contact").value;
+              const seats = document.getElementById("seats").value;
+              const date = document.getElementById("date").value;
+              const time = document.getElementById("time").value;
+              const inquiry = document.getElementById("inquiry").value;
+              const documents = document.getElementById("documents").files;
+              
+            console.log("Reservation Details:");
+            console.log("Name: " + name);
+            console.log("Email: " + email);
+            console.log("Contact Number: " + contact);
+            console.log("Number of Seats: " + seats);
+            console.log("Date: " + date);
+            console.log("Time: " + time);
+            console.log("Inquiry: " + inquiry);
+            
+            // Display contact number, seat quantity, and uploaded documents after submission
+            const contactDisplay = document.getElementById("contactDisplay");
+            contactDisplay.innerHTML = `
+            <strong>Contact Number:</strong> ${contact}<br>
+            <strong>Seats Reserved:</strong> ${seats}<br>
+            <strong>Uploaded Documents:</strong> ${documents.length > 0 ? documents[0].name : "None"}
+            `;
+            contactDisplay.style.display = "block";
+        });
+    </script>
+<script>
+    // Script for Responsive Navbar
+    var navItems = document.getElementById("navItems");
+    var mobileNav = document.getElementById("mobileNav");
+    var hamburger = document.getElementById("hamburger");
+  
+  
+    function adjustNavbar() {
+      screenWidth = parseInt(window.innerWidth);
+      if (screenWidth < 970) {
+        navItems.style.display = "none";
+        hamburger.style.display = "flex";
+      }
+      else {
+        navItems.style.display = "flex";
+        hamburger.style.display = "none";
+      }
+    }
+  
+    adjustNavbar();
+  
+    window.addEventListener("resize", adjustNavbar);
+  
+    hamburger.addEventListener("click", function () {
+      mobileNav.classList.toggle("left-[-70%]");
+      hamburger.classList.toggle("fa-bars");
+      hamburger.classList.toggle("fa-close");
+    })
+  </script>
+
+</body>
+</html>

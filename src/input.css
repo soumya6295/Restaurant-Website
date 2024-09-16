@@ -1,0 +1,98 @@
+html {
+    --x-body-padding: 2.5rem;
+    --child-padding: 1rem;
+    --tx-brightness: 100%;
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    .test {
+      @apply border border-solid border-teal-500;
+    }
+    .px {
+        padding-inline: var(--x-body-padding);        
+    }
+    .pb {
+        padding-bottom: var(--child-padding)
+    }
+    .ps {
+        padding-inline: calc(var(--child-padding) / 2)
+    }
+    .pl {
+        padding-left: var(--child-padding);
+    }
+    .pr {
+        padding-right: var(--child-padding);
+    }
+    .bg-img{
+        height: 92dvh;
+    }
+    .bg-img::before {
+        content: "";
+        position: absolute;
+        background: url("../img/home.jpg") no-repeat;
+        background-size: cover;
+        filter: brightness(50%);
+        height: 100dvh;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        z-index: -1;
+    }
+    [class^='cori']{
+        margin-top: calc(8rem/-2);
+    }
+    [class^='cori-left']{
+        margin-left: -23px;
+    }
+    [class*='corner']{
+        transform: rotate(150deg);
+    }
+    .w-container{
+        @apply mx-auto;
+        /* @apply my-8 ; */
+        @apply pb-4;
+        @apply max-w-8xl;
+    }
+    nav.nav-bg{
+        @apply bg-stone-950;
+    }
+
+    .nav-container{
+        @apply my-8;
+        @apply pb-4;
+        @apply w-full;
+    }
+    .parallax-container{
+        background: url("../img/huge.webp") ;
+        background-position: center;
+        /* background-size: 100vw ; */
+        background-position-y: 35px;
+        width: 100%;
+    }
+    .bg-about{
+        background: url(../img/tandoor.jpg) no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+@layer components {
+}
+
+@layer utilities {
+    .font-beautiful{
+        font-family: 'Tsukimi Rounded', Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .font-verdana{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    
+    .max-w-8xl {
+        max-width: 1360px;
+    }
+}

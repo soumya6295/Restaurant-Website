@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu: Tandoori Temptations</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/navbar.js"></script>
+    <link rel="stylesheet" href="dist/Menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+      // Script for Nav Scroll effect
+      $(function () {
+          $(document).scroll(function () {
+            var $nav = $("nav");
+            $nav.toggleClass('nav-bg', $(this).scrollTop() > $nav.height()/4);
+          });
+        });    
+    </script>
+  </head>
+  <body class="bg-img">
+    <!-- Navbar -->
+    <nav class="sticky z-50 top-0 border-b bg-transparent transition-all duration-500 overflow-hidden">
+      <div class="px-12 max-w-7xl h-16 mx-auto text-white flex items-center justify-between">
+        <div>
+          <img src="./img/logo-rec.png" class="h-40" alt="">
+        </div>
+        <div class="flex lg:gap-8 gap-6 uppercase tracking-wider cursor-pointer text-lg items-center" id="navItems">
+          <span class="group">
+            <a href="./index.html">Home</a>
+            <div class="w-0 group-hover:w-full h-0.5 bg-white ease-in-out duration-500"></div>
+          </span>
+          <span class="group">
+            <a href="./Menu.html">Menu</a>
+            <div class="w-0 group-hover:w-full h-0.5 bg-white ease-in-out duration-500"></div>
+          </span>
+          <span class="group">
+            <a href="./reservationpage.html">Reservation</a>
+            <div class="w-0 group-hover:w-full h-0.5 bg-white ease-in-out duration-500"></div>
+          </span>
+          <span class="group">
+            <a href="./gallerypage.html">Gallery</a>
+            <div class="w-0 group-hover:w-full h-0.5 bg-white ease-in-out duration-500"></div>
+          </span>
+          <span class="group">
+            <a href="./index.html#about">About</a>
+            <div class="w-0 group-hover:w-full h-0.5 bg-white ease-in-out duration-500"></div>
+          </span>
+          <span class="group">
+            <a href="./index.html#contact">Contact</a>
+            <div class="w-0 group-hover:w-full h-0.5 bg-white ease-in-out duration-500"></div>
+          </span>
+        </div>
+        <div id="hamburger" class="fa fa-bars flex items-center text-xl text-teal-500" style="display:none;"></div>
+        <div id="mobileNav"
+          class="fixed flex flex-col gap-8 pt-16 px-4 text-xl uppercase bg-teal-500 h-full inset-0 top-16 w-[70%] left-[-70%] ease-in-out duration-500 cursor-pointer">
+          <span><a href="./index.html">Home</a></span>
+          <span><a href="./Menu.html">Menu</a></span>
+          <span><a href="./reservationpage.html">Reservation</a></span>
+          <span><a href="./gallerypage.html">Gallery</a></span>
+          <span><a href="./index.html#about">About</a></span>
+          <span><a href="./index.html#contact">Contact</a></span>
+        </div>
+      </div>
+  </nav>
+  <main>
+    <div class="w-full">
+      <div>
+        <div class="heading bg-black">
+          <h1>Tandoori Temptation</h1>
+          <h3>&mdash; Menu &mdash;</h3>
+        </div>
+      </div>
+      <div class="p-8 pb-16 mx-auto bg-white bg-opacity-70 flex flex-row justify-around flex-wrap max-w-7xl text-xl text-center font-medium">
+        <div class="mt-8 mx-2 max-w-sm hover:scale-110 ease-in-out transition-transform duration-300 hover:shadow-xl"><img class="h-72 w-full object-cover object-center" src="./img/food1.jpeg" alt="">
+          <div class="font-normal text-justify border border-stone-950">
+              <div class="font-medium bg-slate-100 p-4 flex justify-between">
+                  <div class="">Tandoori Paratha platter</div>
+                  <div class="">₹100</div>
+              </div>
+              <p class="text-lg p-4 h-32 bg-gray-50">Flaky Indian bread filled with spiced potatoes.</p>
+          </div>
+        </div>
+        <div class="mt-8 mx-2 max-w-sm hover:scale-110 ease-in-out transition-transform duration-300 hover:shadow-xl"><img class="h-72 w-full object-cover object-center" src="./img/food2.jpeg" alt="">
+          <div class="font-normal text-justify border border-stone-950">
+              <div class="font-medium bg-slate-100 p-4 flex justify-between">
+                  <div class="">Masala Omlate</div>
+                  <div class="">₹80</div>
+              </div>
+              <p class="text-lg p-4 h-32 bg-gray-50">Three-egg omelette with onions, tomatoes, green chilies, and Indian spices. Served with toast.</p>
+          </div>
+        </div>
+        <div class="mt-8 mx-2 max-w-sm hover:scale-110 ease-in-out transition-transform duration-300 hover:shadow-xl"><img class="h-72 w-full object-cover object-center" src="./img/food3.jpeg" alt="">
+          <div class="font-normal text-justify border border-stone-950">
+              <div class="font-medium bg-slate-100 p-4 flex justify-between">
+                  <div class="">Rose cardomom chai</div>
+                  <div class="">₹50</div>
+              </div>
+              <p class="text-lg p-4 h-32 bg-gray-50">Traditional Indian spiced tea with frothy milk.  </p>
+          </div>
+        </div>
+        <div class="mt-8 mx-2 max-w-sm hover:scale-110 ease-in-out transition-transform duration-300 hover:shadow-xl"><img class="h-72 w-full object-cover object-center" src="./img/chicken Biriyani.jpeg" alt="">
+          <div class="font-normal text-justify border border-stone-950">
+              <div class="font-medium bg-slate-100 p-4 flex justify-between">
+                  <div class="">chicken Biriyani</div>
+                  <div class="">₹200</div>
+              </div>
+              <p class="text-lg p-4 h-32 bg-gray-50">Fragrant basmati rice cooked with tender chicken pieces, biryani spices, and garnished with fried onions.
+              </p>
+          </div>
+        </div>
+        <div class="mt-8 mx-2 max-w-sm hover:scale-110 ease-in-out transition-transform duration-300 hover:shadow-xl"><img class="h-72 w-full object-cover object-center" src="./img/paneer Tikka Wrap.jpeg" alt="">
+          <div class="font-normal text-justify border border-stone-950">
+              <div class="font-medium bg-slate-100 p-4 flex justify-between">
+                  <div class="">panner Tikka Wrap</div>
+                  <div class="">₹160</div>
+              </div>
+              <p class="text-lg p-4 h-32 bg-gray-50"> Grilled paneer (Indian cottage cheese) wrapped in a soft tortilla with lettuce, tomatoes, onions, and mint chutney</p>
+          </div>
+        </div>
+        <div class="mt-8 mx-2 max-w-sm hover:scale-110 ease-in-out transition-transform duration-300 hover:shadow-xl"><img class="h-72 w-full object-cover object-center" src="./img/tandoori fish Tikka.jpeg" alt="">
+          <div class="font-normal text-justify border border-stone-950">
+              <div class="font-medium bg-slate-100 p-4 flex justify-between">
+                  <div class="">Tandoori Fish Tikka</div>
+                  <div class="">₹180</div>
+              </div>
+              <p class="text-lg p-4 h-32 bg-gray-50"> Fish chunks marinated in spices and grilled to a smoky perfection. </p>
+          </div>
+        </div>
+        <div class="mt-8 mx-2 max-w-sm hover:scale-110 ease-in-out transition-transform duration-300 hover:shadow-xl"><img class="h-72 w-full object-cover object-center" src="./img/tandori mixed Grill platter.jpeg" alt="">
+          <div class="font-normal text-justify border border-stone-950">
+              <div class="font-medium bg-slate-100 p-4 flex justify-between">
+                  <div class="">Tandoori Mixed Grill Platter</div>
+                  <div class="">₹250</div>
+              </div>
+              <p class="text-lg p-4 h-32 bg-gray-50"> Assorted tandoori specialties including chicken tikka, lamb kebab, and shrimp. Served with naan</p>
+          </div>
+        </div>
+        <div class="mt-8 mx-2 max-w-sm hover:scale-110 ease-in-out transition-transform duration-300 hover:shadow-xl"><img class="h-72 w-full object-cover object-center" src="./img/butter chicken.jpeg" alt="">
+          <div class="font-normal text-justify border border-stone-950">
+              <div class="font-medium bg-slate-100 p-4 flex justify-between">
+                  <div class="">Butter Chicken</div>
+                  <div class="">₹170</div>
+              </div>
+              <p class="text-lg p-4 h-32 bg-gray-50"> Tender pieces of chicken cooked in a rich and creamy tomato-based sauce. Served with basmati rice.                </p>
+          </div>
+        </div>
+        <div class="mt-8 mx-2 max-w-sm hover:scale-110 ease-in-out transition-transform duration-300 hover:shadow-xl"><img class="h-72 w-full object-cover object-center" src="./img/Tandoori Lamp.jpeg" alt="">
+          <div class="font-normal text-justify border border-stone-950">
+              <div class="font-medium bg-slate-100 p-4 flex justify-between">
+                  <div class="">tandoori Lamp</div>
+                  <div class="">₹210</div>
+              </div>
+              <p class="text-lg p-4 h-32 bg-gray-50">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, reiciendis?</p>
+          </div>
+        </div>
+        <div class="mt-8 mx-2 max-w-sm hover:scale-110 ease-in-out transition-transform duration-300 hover:shadow-xl"><img class="h-72 w-full object-cover object-center" src="./img/Tandoori Mushroom.jpeg" alt="">
+          <div class="font-normal text-justify border border-stone-950">
+              <div class="font-medium bg-slate-100 p-4 flex justify-between">
+                  <div class="">Tandoori Mushroom</div>
+                  <div class="">₹150-</div>
+              </div>
+              <p class="text-lg p-4 h-32 bg-gray-50"> Tender lamb chops marinated and cooked in the tandoor for a flavorful dish.</p>
+          </div>
+        </div>
+        <div class="mt-8 mx-2 max-w-sm hover:scale-110 ease-in-out transition-transform duration-300 hover:shadow-xl"><img class="h-72 w-full object-cover object-center" src="./img/Tandoori Prawns.jpeg" alt="">
+          <div class="font-normal text-justify border border-stone-950">
+              <div class="font-medium bg-slate-100 p-4 flex justify-between">
+                  <div class="">Tandoori prown</div>
+                  <div class="">₹169</div>
+              </div>
+              <p class="text-lg p-4 h-32 bg-gray-50">Succulent prawns marinated in spices and grilled for a delightful seafood option.</p>
+          </div>
+        </div>
+        <div class="mt-8 mx-2 max-w-sm hover:scale-110 ease-in-out transition-transform duration-300 hover:shadow-xl"><img class="h-72 w-full object-cover object-center" src="./img/tandoori Roti.jpeg" alt="">
+          <div class="font-normal text-justify border border-stone-950">
+              <div class="font-medium bg-slate-100 p-4 flex justify-between">
+                  <div class="">Tandoori Roti</div>
+                  <div class="">₹30</div>
+              </div>
+              <p class="text-lg p-4 h-32 bg-gray-50">Whole wheat bread cooked in the tandoor, a great accompaniment to various dishes.</p>
+          </div>
+        </div>
+        <div class="mt-8 mx-2 max-w-sm hover:scale-110 ease-in-out transition-transform duration-300 hover:shadow-xl"><img class="h-72 w-full object-cover object-center" src="./img/Tandoori Vegetable Skewers.jpeg" alt="">
+          <div class="font-normal text-justify border border-stone-950">
+            <div class="font-medium bg-slate-100 p-4 flex justify-between">
+                <div class="">Tandoori vegitable Skewers</div>
+                <div class="">₹149</div>
+            </div>
+            <p class="text-lg p-4 h-32 bg-gray-50">Assorted veggies marinated and grilled for a tasty and healthy option.</p>
+          </div>
+        </div>
+        <div class="mt-8 mx-2 max-w-sm hover:scale-110 ease-in-out transition-transform duration-300 hover:shadow-xl"><img class="h-72 w-full object-cover object-center" src="./img/Tandoori Mixed Platter.jpeg" alt="">
+          <div class="font-normal text-justify border border-stone-950">
+              <div class="font-medium bg-slate-100 p-4 flex justify-between">
+                  <div class="">Tandoori grill platter</div>
+                  <div class="">₹189</div>
+              </div>
+              <p class="text-lg p-4 h-32 bg-gray-50"> A combination of tandoori specialties for a diverse and satisfying meal.</p>
+          </div>
+        </div>
+        <div class="mt-8 mx-2 max-w-sm hover:scale-110 ease-in-out transition-transform duration-300 hover:shadow-xl"><img class="h-72 w-full object-cover object-center" src="./img/Tandoori Mushroom.jpeg" alt="">
+          <div class="font-normal text-justify border border-stone-950">
+              <div class="font-medium bg-slate-100 p-4 flex justify-between">
+                  <div class="">Tandoori mushroom</div>
+                  <div class="">149</div>
+              </div>
+              <p class="text-lg p-4 h-32 bg-gray-50"> A combination of tandoori specialties for a diverse and satisfying meal.</p>
+          </div>
+        </div>
+      </div>
+  </main>
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+      <!-- Logo -->
+      <div class="mb-4 md:mb-0">
+        <img src="./img/Logo.png" alt="Tandoori Temptations" class="h-20">
+      </div>
+      <!-- Navigation Links -->
+      <div class="flex flex-wrap justify-center text-center md:justify-end space-x-6">
+        <a href="./index.html">Home</a>
+        <a href="./Menu.html">Menu</a>
+        <a href="./reservationpage.html">Reservation</a>
+        <a href="./gallerypage.html">Gallery</a>
+        <a href="./index.html#about">About</a>
+        <a href="./index.html#contact">Contact</a>
+      </div>
+    </div>
+    <div class="text-center mt-8">
+      <p class="text-black">&copy; 2023 Tandoori Temptations. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <script>
+    const parallax = document.getElementById("parallax");
+    window.addEventListener("scroll", function () {
+    let offset = window.pageYOffset;
+    if (screenWidth > 1024) {
+      parallax.style.backgroundPositionY = offset * 0.7 - 100 + "px";
+      parallax.classList.remove("bg-fixed");
+    }
+  });
+  
+    // Script for Responsive Navbar
+    var navItems = document.getElementById("navItems");
+    var mobileNav = document.getElementById("mobileNav");
+    var hamburger = document.getElementById("hamburger");
+  
+  
+    function adjustNavbar() {
+      screenWidth = parseInt(window.innerWidth);
+      if (screenWidth < 970) {
+        navItems.style.display = "none";
+        hamburger.style.display = "flex";
+      }
+      else {
+        navItems.style.display = "flex";
+        hamburger.style.display = "none";
+      }
+    }
+  
+    adjustNavbar();
+  
+    window.addEventListener("resize", adjustNavbar);
+  
+    hamburger.addEventListener("click", function () {
+      mobileNav.classList.toggle("left-[-70%]");
+      hamburger.classList.toggle("fa-bars");
+      hamburger.classList.toggle("fa-close");
+    })
+  </script>
+  </body>
+  </html>  

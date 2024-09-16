@@ -1,0 +1,29 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+.test{
+    @apply border border-lime-600;
+}
+nav.nav-bg{
+    @apply bg-stone-950;
+}
+}
+
+@layer components {
+}
+
+@layer utilities {
+    .font-beautiful{
+        font-family: 'Tsukimi Rounded', Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .font-verdana{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    
+    .max-w-8xl {
+        max-width: 1360px;
+    }
+}

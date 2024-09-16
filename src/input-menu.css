@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    .test {
+        @apply border border-solid border-teal-500;
+      }
+    nav.nav-bg{
+        @apply bg-stone-950;
+    }
+    .bg-img{
+        background: url(../img/tandoor.jpg) no-repeat;
+        background-size: cover;
+    }
+    .heading{
+        color: white;
+        padding: 20px;
+        grid-column: 1/-1;
+        text-align: center;
+      }
+      .heading>h1{
+        font-weight: 400;
+        font-size: 30px;
+        letter-spacing: 10px;
+        margin-bottom: 10px;
+      }
+      .heading>h3{
+        font-weight: 60px;
+        font-size: 30px;
+        letter-spacing: 5px;
+      }
+}
+@layer components {
+}
+
+@layer utilities {
+    .font-beautiful{
+        font-family: 'Tsukimi Rounded', Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .font-verdana{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    
+    .max-w-8xl {
+        max-width: 1360px;
+    }
+}
